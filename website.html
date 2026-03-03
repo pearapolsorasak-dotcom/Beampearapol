@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Anniversary ❤️</title>
+
+<!-- ฟ้อนต์ไทย Prompt -->
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Prompt', sans-serif;
+    background: linear-gradient(135deg, #ffd6e7, #ffc2da);
+    text-align: center;
+    padding: 20px;
+    color: #333;
+}
+
+h1 {
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+/* Main Photo */
+.photo-frame {
+    width: 260px;
+    height: 260px;
+    margin: 25px auto;
+    padding: 10px;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+    cursor: pointer;
+}
+
+/* Date / Text Box */
+.message {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Slideshow */
+.slideshow-container {
+    position: relative;
+    max-width: 260px;
+    margin: 35px auto;
+}
+
+.slide {
+    display: none;
+    padding: 8px;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.slide img {
+    width: 100%;
+    border-radius: 18px;
+    cursor: pointer;
+}
+
+/* Buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 8px 12px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.prev { left: -15px; }
+.next { right: -15px; }
+
+/* Love Button */
+.love-btn {
+    margin-top: 25px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    font-family: 'Prompt', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: 0.2s;
+}
+
+.love-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    max-width: 90%;
+    text-align: center;
+    animation: zoomIn 0.3s ease;
+}
+
+.modal-content img {
+    width: 100%;
+    max-height: 70vh;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    font-size: 1rem;
+    line-height: 1.8;
+    white-space: pre-line;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+
+<h1>Happy Anniversary ❤️</h1>
+
+<div class="message">
+     💕 07 / 03 / 69 💕
+</div>
+
+<div class="photo-frame">
+    <img src="photo/mainphoto.jpg"
+    onclick="openModal(this,'รูปแรกของเราที่เจอกันในร้านเหล้า จุดเริ่มต้นเลย 💕')">
+</div>
+
+<div class="message">
+     💕 รูปแรกในเครื่องที่ได้เจอกัน 💕
+</div>
+
+<div class="slideshow-container">
+
+    <div class="slide">
+        <img src="photo/photo1.jpg" onclick="openModal(this,'เธอน่ารักตั้งแต่วันที่ได้เจอกัน จนได้ไปเที่ยวด้วยกันครั้งแรก 💕')">
+    </div>
+
+    <div class="slide">
+        <img src="photo/photo2.jpg" onclick="openModal(this,'วันง่ายๆ แค่ดูหนังแบบเหมาโรงกันสองคน แค่นี้ก็มีความสุขแล้ว 💗')">
+    </div>
+
+    <div class="slide">
+        <img src="photo/photo3.jpg" onclick="openModal(this,'ทริปที่สอง ทริปที่กล้าออกไปแบบสองคนจริงๆ วัดใจเลย 555 💖')">
+    </div>
+
+    <div class="slide">
+        <img src="photo/photo4.jpg" onclick="openModal(this,'วันธรรมดาที่พิเศษที่สุด ✨')">
+    </div>
+
+    <div class="slide">
+        <img src="photo/photo5.jpg" onclick="openModal(this,'ขอบคุณที่อยู่ข้างกันเสมอ 💕')">
+    </div>
+
+    <div class="slide">
+        <img src="photo/photo6.jpg" onclick="openModal(this,'มีกันอยู่แค่2คนยามรักกันรักกันจริงยามตีกันตีกะนตาย💕')">
+    </div>
+
+    <div class="slide">
+        <img src="photo/photo7.jpg" onclick="openModal(this,'รูปที่สามารถดูได้ทุกวันแฟนสวยที่สุด💕')">
+    </div>
+
+    <a class="prev" onclick="changeSlide(-1)">❮</a>
+    <a class="next" onclick="changeSlide(1)">❯</a>
+
+</div>
+
+<button class="love-btn" onclick="openLoveMessage()">
+    ลองกดดูดิ้ แล้วอย่าซึ้งนะ 💕
+</button>
+
+<!-- Modal -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <img id="modalImg">
+        <p id="modalText"></p>
+    </div>
+</div>
+
+<script>
+let slideIndex = 1;
+showSlide(slideIndex);
+
+function changeSlide(n) {
+    showSlide(slideIndex += n);
+}
+
+function showSlide(n) {
+    let slides = document.getElementsByClassName("slide");
+
+    if (n > slides.length) slideIndex = 1;
+    if (n < 1) slideIndex = slides.length;
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    slides[slideIndex-1].style.display = "block";
+}
+
+function openModal(imgElement, text) {
+    document.getElementById("imageModal").style.display = "flex";
+    document.getElementById("modalImg").style.display = "block";
+    document.getElementById("modalImg").src = imgElement.src;
+    document.getElementById("modalText").innerText = text;
+}
+
+function openLoveMessage() {
+    document.getElementById("imageModal").style.display = "flex";
+    document.getElementById("modalImg").style.display = "none";
+    document.getElementById("modalText").innerText =
+`ขอบคุณที่อยู่ข้างกันมาตลอดนะ 💕
+
+ทุกวันธรรมดากลายเป็นวันที่พิเศษ
+เพราะมีเธออยู่ข้างๆ
+💕 รักมากขึ้นทุกวันเลย 💕
+ขอบคุณที่เป็นสิ่งที่พิเศษที่สุดในชีวิต
+ขอบคุณที่เป็นทุกๆอย่างในชีวิต
+ขอบคุณที่ไม่ว่าจะทำผิดพลาดอะไรแค่ใหนเธอก็ยังอยู่ข้างๆ
+ขอบคุณที่คอยใส่ใจ
+ขอบคุณทุกๆสิ่งทุกๆอย่างอธิบายไม่ได้
+แต่ก็ขอให้รักกันไปนานๆ
+ขอให้เธออยู่กับฉันในทุกวินาทีชีวิต
+    💕รักเธอนะ💕 `;
+}
+
+function closeModal() {
+    document.getElementById("imageModal").style.display = "none";
+}
+</script>
+
+</body>
+</html>

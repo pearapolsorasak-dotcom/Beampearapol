@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+
+<!-- ฟอนต์มินิมอล -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffd6e7, #ffc2da);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Card */
+.login-card {
+    background: #ffffff;
+    padding: 25px 20px;
+    border-radius: 20px;
+    width: 85%;
+    max-width: 300px; /* เล็กลง */
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+h1 {
+    font-size: 18px; /* เล็กลง */
+    font-weight: 400;
+    color: #ff4d88;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+/* Dots */
+.passkey-display {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid #ff4d88;
+    background: transparent;
+}
+
+.dot.filled {
+    background: #ff4d88;
+}
+
+/* Keypad */
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.keypad button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16px; /* มินิมอล */
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: #f8f8f8;
+    transition: 0.2s;
+}
+
+.keypad button:active {
+    transform: scale(0.92);
+}
+
+/* Enter Button */
+.enter-btn {
+    margin-top: 18px;
+    padding: 12px;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 14px;
+    background: #ff4d88;
+    color: white;
+}
+
+/* Popup */
+.popup {
+    position: fixed;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff4d88;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: 400;
+    transition: 0.4s ease;
+}
+
+.popup.show {
+    bottom: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login-card">
+    <h1>Happy Anniversary 💕</h1>
+
+    <div class="passkey-display">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+
+    <div class="keypad">
+        <button onclick="addNumber(1)">1</button>
+        <button onclick="addNumber(2)">2</button>
+        <button onclick="addNumber(3)">3</button>
+        <button onclick="addNumber(4)">4</button>
+        <button onclick="addNumber(5)">5</button>
+        <button onclick="addNumber(6)">6</button>
+        <button onclick="addNumber(7)">7</button>
+        <button onclick="addNumber(8)">8</button>
+        <button onclick="addNumber(9)">9</button>
+        <button onclick="clearPass()">C</button>
+        <button onclick="addNumber(0)">0</button>
+        <button onclick="deleteNumber()">⌫</button>
+    </div>
+
+    <button class="enter-btn" onclick="checkPass()">Enter</button>
+</div>
+
+<div class="popup" id="popup">
+    จำวันครบรอบได้ด้วย เก่งมาก 💖
+</div>
+
+<script>
+let correctPasskey = "071266";
+let enteredPass = "";
+
+function addNumber(num) {
+    if (enteredPass.length < 6) {
+        enteredPass += num;
+        updateDisplay();
+    }
+}
+
+function deleteNumber() {
+    enteredPass = enteredPass.slice(0, -1);
+    updateDisplay();
+}
+
+function clearPass() {
+    enteredPass = "";
+    updateDisplay();
+}
+
+function updateDisplay() {
+    const dots = document.querySelectorAll(".dot");
+    dots.forEach((dot, index) => {
+        if (index < enteredPass.length) {
+            dot.classList.add("filled");
+        } else {
+            dot.classList.remove("filled");
+        }
+    });
+}
+
+function checkPass() {
+    if (enteredPass === correctPasskey) {
+        let popup = document.getElementById("popup");
+        popup.classList.add("show");
+
+        setTimeout(() => {
+            window.location.href = "website.html";
+        }, 1500);
+
+    } else {
+        clearPass();
+        alert("Wrong Passkey");
+    }
+}
+</script>
+
+</body>
+</html>
